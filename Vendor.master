@@ -1,0 +1,136 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Vendor.master.cs" Inherits="Vendor" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+ 
+ <style>
+        *
+        {
+            padding:0;
+            margin:0;
+
+        }
+        .sidebar-link {
+        display: block;
+        color: #fff;
+        text-decoration: none;
+        padding: 5px;
+        margin: 5px 0;
+        border-radius: 5px;
+        transition: background-color 0.5s;
+        background-color: #002C54;
+        color:aliceblue;
+    }
+
+    .sidebar-link:hover {
+        background-color:  #1995AD; /* Change to the color you prefer on hover */
+    }
+    </style>
+</head>
+   <body style="background-color:#66A5AD;">
+    <form id="form1" runat="server">
+    <div style="background-color:#31473A;>
+        <div>
+          <table style = "width:100%; height:70px;z-index:99 " class="bgp-3 mb-2 bg-dark text-white">
+                <tr style = "width:100%; height:100px; background-color:#00246B;" class="p-3 mb-2 bg-dark text-white">
+                    <td><h1 style = "text-align:center; color:gold; ">PeTi Shop - Vendor</h1>
+                    
+                    </td>
+                </tr>
+              </table>
+<table style="width:100%; background-color:#002C54;">
+    <tr style="background-color:#EEEEEE;">
+        <td style="width: 80%;">
+            <asp:Menu ID="Menu1" runat="server" ForeColor="Yellow" Orientation="Horizontal" 
+                style="font-weight: 800; display: inline-block; background-color:#00246B;" StaticEnableDefaultPopOutImage="false">
+                <StaticMenuItemStyle HorizontalPadding="6" />
+                <StaticMenuStyle BackColor="#EEEEEE" BorderColor="#CCCCCC" BorderStyle="Solid" BorderWidth="0px"
+                    HorizontalPadding="4px" VerticalPadding="4px" />
+                <StaticMenuItemStyle BackColor="#EEEEEE" ForeColor="Black" ItemSpacing="8px" />
+                <StaticHoverStyle BackColor="#1995AD" ForeColor="White" />
+                <DynamicHoverStyle BackColor="#EEEEEE" />
+                <DynamicMenuStyle BackColor="#EEEEEE" BorderColor="#CCCCCC" BorderStyle="Solid" BorderWidth="1px" />
+                <StaticSelectedStyle BackColor="#EEEEEE" />
+                <DynamicMenuItemStyle BackColor="#EEEEEE" BorderColor="#CCCCCC" BorderStyle="Solid"
+                    BorderWidth="1px" ForeColor="Black" HorizontalPadding="4px" VerticalPadding="4px" />
+                <Items>
+                   
+                        <asp:MenuItem Text="Dashboard" Value="Dashboard" NavigateUrl="Dashboard_vendor.aspx"></asp:MenuItem>
+               
+
+
+                                     
+                        <asp:MenuItem Text="Product View" Value="Product List" NavigateUrl="Vendor_Product_View.aspx"></asp:MenuItem>
+         
+
+
+                        <asp:MenuItem Text="Add Product" Value="Category" NavigateUrl="Product.aspx"></asp:MenuItem>
+         
+
+
+        
+                        <asp:MenuItem Text="Stock in Pending" Value="Vendor Cash Details" NavigateUrl="Vendor_Product.aspx"></asp:MenuItem>
+    
+
+                    <asp:MenuItem Text="Items sold" Value="Purchased_Details_Vendor" NavigateUrl="Purchased_Details_Vendor.aspx"></asp:MenuItem>
+    
+                      
+           
+                      <asp:MenuItem Text="Feedback" Value="Feedback" NavigateUrl="vendor_feedback.aspx"></asp:MenuItem>
+                     <asp:MenuItem Text="Logout" Value="Logout" NavigateUrl="Logout_vendor.aspx"></asp:MenuItem>
+              
+                       
+
+                </Items>
+            </asp:Menu>
+        </td>
+       
+    </tr>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div style="background-color:#66A5AD;height:582px;width:100%; display: flex;">
+    <div style="width: 15%; background-color: #66A5AD; padding: 20px;">
+
+        <asp:LinkButton ID="LinkButton1" runat="server" CssClass="sidebar-link" PostBackUrl="~/Vendor_Product_View.aspx">Product View</asp:LinkButton><br />
+        <asp:LinkButton ID="LinkButton12" runat="server" CssClass="sidebar-link" PostBackUrl="~/Product.aspx">Add Product</asp:LinkButton><br />
+        <asp:LinkButton ID="LinkButton11" runat="server" CssClass="sidebar-link" PostBackUrl="~/Vendor_Product.aspx">Product Status</asp:LinkButton><br />
+        <asp:LinkButton ID="LinkButton10" runat="server" CssClass="sidebar-link" PostBackUrl="~/Purchased_Details_Vendor.aspx">Purchased Details</asp:LinkButton><br />
+                <asp:LinkButton ID="LinkButton2" runat="server" CssClass="sidebar-link" PostBackUrl="~/vendor_feedback.aspx">Feedback</asp:LinkButton><br />
+         <asp:LinkButton ID="LinkButton3" runat="server" CssClass="sidebar-link" PostBackUrl="~/vendor_logout.aspx">Logout</asp:LinkButton><br />
+        
+    </div>
+    <div style="width: 85%; background-color: #66A5AD; padding: 20px;">
+        <!-- Your content div here -->
+
+       
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+           
+
+
+        </asp:ContentPlaceHolder>
+    </div>
+   </div>
+         
+    </div>
+    </div>
+    </form>
+</body>
+</html>
